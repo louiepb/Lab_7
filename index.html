@@ -43,7 +43,7 @@
 		 
 			 var locations = data.features.map(function(AffDev) {
                   var location = AffDev.geometry.coordinates.reverse();
-                  location.push(1); //add intensity of each point location, range between 0.0 and 1.0
+                  location.push(0.2); //add intensity of each point location, range between 0.0 and 1.0
                   return location; 
             });
 			
