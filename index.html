@@ -43,12 +43,12 @@
 		 
 			 var locations = data.features.map(function(AffDev) {
                   var location = AffDev.geometry.coordinates.reverse();
-                  location.push(0.2); //add intensity of each point location, range between 0.0 and 1.0
+                  location.push(1); //add intensity of each point location, range between 0.0 and 1.0
                   return location; 
             });
 			
 			var heat = L.heatLayer(locations, {
-					radius: 25,
+					radius: 30,
 					gradient: {0.3: 'blue', 0.7: 'lime', 1: 'red'}
 					});
 				map.addLayer(heat);
