@@ -41,11 +41,11 @@
 		 
 		 $.getJSON("AffDev.geojson",function(data){
 		 
-			var locations = data.features.map (function(AffDev) {
-			var locations = AffDev.geometry.coordinates.reverse();
-			location.push(1);
-			return location;
-			});
+			 var locations = data.features.map(function(AffDev) {
+                  var location = AffDev.geometry.coordinates.reverse();
+                  location.push(1); //add intensity of each point location, range between 0.0 and 1.0
+                  return location; 
+            });
 			
 			var heat = L.heatLayer(locations, {
 					radius: 80,
